@@ -1,59 +1,38 @@
+// src/app/page.tsx
+import { projectsData } from "@/data/projects";
+import ProjectCard from "@/components/ProjectCard";
+
 export default function Home() {
   return (
     <div className="space-y-24">
       
-      {/* 1. Hero Introduction */}
+      {/* Hero Section */}
       <section className="max-w-2xl space-y-4">
         <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl text-zinc-950 dark:text-zinc-50">
-          Hi, I'm a Software Engineer.
+          Hey! I'm Gul.
         </h1>
         <p className="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
-          I build low-level systems, explore formal code verification, and design robust backend software. 
-          Currently focused on ensuring structural correctness, system performance, and analyzing code security.
+          I'm a Software Developer specializing in back-end Java development, Databases, and a particular interest in cybersecurity and software optimization. I am 
+          currently a BSc Computer Science student @ The University of Southampton. In my free time, I enjoy going on walks, singing, hanging out with friends over a cup of tea, and gaming!
         </p>
-        
-        {/* Social / Contact Links */}
         <div className="flex gap-5 pt-2 font-mono text-xs">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">GitHub ↗</a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">LinkedIn ↗</a>
-          <a href="mailto:your.email@domain.com" className="text-blue-600 dark:text-blue-400 hover:underline">Contact ↗</a>
+          <a href="https://github.com/GulMuhammad-CS" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/gul-muhammad-my/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">LinkedIn ↗</a>
         </div>
       </section>
 
-      {/* 2. Featured Engineering Projects Section */}
+      {/* Featured Projects Grid Section */}
       <section id="projects" className="space-y-6 scroll-mt-16">
         <div className="space-y-1">
           <h2 className="text-xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Featured Engineering Projects</h2>
           <p className="text-sm text-zinc-500">Selected work exploring systems optimization and automation.</p>
         </div>
         
-        {/* Project Card Grid Layout */}
+        {/* This mapping block loops through your data and mounts the cards dynamically */}
         <div className="grid gap-4 sm:grid-cols-2">
-          
-          {/* Card 1: Storage Project */}
-          <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors shadow-sm">
-            <h3 className="font-bold text-zinc-900 dark:text-zinc-100 mb-1">Persistent Storage Engine</h3>
-            <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
-              A transactional data storage system featuring custom write-ahead logging (WAL) and memory-mapped file structures optimized for rapid key-value retrieval.
-            </p>
-            <div className="flex flex-wrap gap-1.5 font-mono text-[10px]">
-              <span className="px-2 py-0.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 rounded">Java</span>
-              <span className="px-2 py-0.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 rounded">Systems</span>
-            </div>
-          </div>
-
-          {/* Card 2: Assistive App */}
-          <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors shadow-sm">
-            <h3 className="font-bold text-zinc-900 dark:text-zinc-100 mb-1">ER/SPEAK Interface</h3>
-            <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
-              An assistive communications system designed to interface directly with custom input layouts, mapping optimized data pathways for streamlined accessibility.
-            </p>
-            <div className="flex flex-wrap gap-1.5 font-mono text-[10px]">
-              <span className="px-2 py-0.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 rounded">Python</span>
-              <span className="px-2 py-0.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 rounded">Accessibility</span>
-            </div>
-          </div>
-
+          {projectsData.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
         </div>
       </section>
 
