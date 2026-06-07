@@ -29,7 +29,7 @@ export default function RootLayout({
             </a>
             <nav className="flex gap-6 text-sm font-medium text-zinc-600 dark:text-zinc-400">
               <a href="#projects" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Projects</a>
-              <a href="#about" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">About</a>
+              <a href="/about" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">About</a>
               <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Resume</a>
             </nav>
           </header>
